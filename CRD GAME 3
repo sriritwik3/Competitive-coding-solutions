@@ -1,0 +1,28 @@
+#include <stdio.h>
+int digit(int n)
+{
+    if(n%9==0)
+    return n/9;
+    else
+    return n/9 + 1;
+}
+
+int main(void) {
+	// your code goes here
+	int t;
+	scanf("%d",&t);
+	for(int i=0;i<t;i++)
+	{
+	    int pc,pr;
+	    scanf("%d %d",&pc,&pr);
+	   pc=digit(pc);
+	   pr=digit(pr);
+	   if(pc<pr)
+	   {
+	       printf("%d %d\n",0,pc);
+	   }
+	   else
+	   printf("%d %d\n",1,pr);
+	}
+	return 0;
+}
