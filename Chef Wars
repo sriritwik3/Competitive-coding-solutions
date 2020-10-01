@@ -1,0 +1,36 @@
+#include<stdio.h>
+int main()
+{
+    int n;
+    scanf("%d" ,&n);
+    int P[n],H[n];
+    
+    for (int i=0;i<n;i++)
+    {
+        scanf("%d %d",&H[i],&P[i]);
+    }
+    
+    for (int i=0;i<n;i++)
+    {
+        if (P[i]>H[i])
+        {
+            printf("1\n");
+        }
+        else
+        {
+            while(P[i]>0 && H[i]>0)
+            {
+                H[i]=H[i]-P[i];
+                P[i]=P[i]/2;
+            }
+            
+            if (H[i]<=0)
+            {
+                printf("1\n");
+            }
+            else
+            printf("0\n");
+        }
+    }
+    
+}
